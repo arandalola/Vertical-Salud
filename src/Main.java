@@ -37,20 +37,20 @@ public class Main {
                 ;//performPatientEntry(scanner);
                 return option;
             case "2":
-                rellenarPedido(scanner,"Apósitos ");
+                rellenarPedido(scanner,"Apositos");
                 ;//performAllAppointments();
                 return option;
             case "3":
                 rellenarPedido(scanner,"Tijeras");
                 return option;
             case "4":
-                rellenarPedido(scanner,"Jabón antiséptico");
+                rellenarPedido(scanner,"Jabon antiseptico");
             case "5":
                 rellenarPedido(scanner,"Guantes");
             case "6":
-                rellenarPedido(scanner,"Termómetro");
+                rellenarPedido(scanner,"Termometro");
             case "7":
-                rellenarPedido(scanner,"Algodón");
+                rellenarPedido(scanner,"Algodon");
             case "8":
                 rellenarPedido(scanner,"Alcohol");
             case "9":
@@ -62,41 +62,46 @@ public class Main {
                 return option;
         }
     }
-    private static void rellenarPedido (Scanner scanner, String n){
-            int cantidad=0;
-            String nombre ="";
-            String apellido ="";
-            String direccion ="";
+    private static void rellenarPedido (Scanner scanner, String product){
+            int amount=0;
+            String first_name ="";
+            String last_name ="";
+            String address ="";
+            String city ="";
 
-        do {
-            System.out.println("\n\n Estamos haciendo el pedido de " + n + " :\n");
+
+            System.out.println("\n\n Estamos haciendo el pedido de " + product + " :\n");
             System.out.print("dime la cantidad: ");
-            cantidad = scanner.nextInt();
+            amount = scanner.nextInt();
             System.out.println("vamos a rellenar los datos personales del cliente:");
             System.out.print("Dame tu nombre: ");
-            nombre = scanner.next();
+            first_name = scanner.next();
             System.out.print("\n Dame tu apellido: ");
-            apellido = scanner.next();
+            last_name = scanner.next();
             System.out.println("\n Dame la dirección de entrega: ");
             System.out.print("Calle: ");
-            direccion = scanner.next();
+            address = scanner.next();
             System.out.println("nº: ");
-            direccion = direccion+" "+scanner.next();
+            address +=" "+scanner.next();
             System.out.println("Dame el piso: ");
-            direccion = direccion+" "+scanner.next();
+            address +=" "+scanner.next();
             System.out.println("Dame la puerta");
-            direccion = direccion+" "+scanner.next();
+            address +=" "+scanner.next();
             System.out.println("Dame el codigo postal");
-            direccion = direccion+" "+scanner.next();
-            pedido(n, cantidad, nombre, apellido, direccion);
-        }while(n== null && cantidad ==0 && nombre ==null && apellido ==null && direccion ==null);
+            address +=" "+scanner.next();
+            System.out.println("Dame la ciudad: ");
+            city =scanner.next();
+            address +=" "+city;
+            pedido(product,amount ,first_name,last_name , address);
+
+
     }
 
-    private static void pedido(String n, int cantidad, String nombre, String apellido, String direccion) {
+    private static void pedido(String n, int amount, String first_name, String last_name, String address) {
         System.out.println("\n\n Los datos del pedido realizado son : ");
-        System.out.println("Producto: "+n+" cantidad: "+cantidad);
-        System.out.println("Nombre del cliente: "+nombre+" "+apellido);
-        System.out.println("Dirección de envío: "+direccion+" \n\n");
+        System.out.println("Producto: "+n+"\n cantidad: "+amount);
+        System.out.println("Nombre del cliente: "+first_name+" "+last_name);
+        System.out.println("Dirección de envío: "+address+" \n\n");
 
     }
 
