@@ -1,16 +1,16 @@
-public class Productos {
+public class Products {
 
     //Atributos
     private String product_name="";
     private int id;
 
     //Constructor
-    public Productos(String product_name, int id) {
+    public Products(String product_name, int id) {
         this.product_name = product_name;
         this.id = id;
     }
 
-    public Productos(){}
+    public Products(){}
 
     public String getProduct_name() {
         return product_name;
