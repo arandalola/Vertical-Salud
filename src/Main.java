@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -32,33 +33,71 @@ public class Main {
         String option = scanner.next();
         switch (option) {
             case "1":
-                System.out.println("1");
+                rellenarPedido(scanner,"Analgesicos");
                 ;//performPatientEntry(scanner);
                 return option;
             case "2":
-                System.out.println("2");
+                rellenarPedido(scanner,"Apósitos ");
                 ;//performAllAppointments();
                 return option;
             case "3":
-                System.out.println("3");
+                rellenarPedido(scanner,"Tijeras");
                 return option;
             case "4":
-                System.out.println("4");
+                rellenarPedido(scanner,"Jabón antiséptico");
             case "5":
-                System.out.println("5");
+                rellenarPedido(scanner,"Guantes");
             case "6":
-                System.out.println("6");
+                rellenarPedido(scanner,"Termómetro");
             case "7":
-                System.out.println("7");
+                rellenarPedido(scanner,"Algodón");
             case "8":
-                System.out.println("8");
+                rellenarPedido(scanner,"Alcohol");
             case "9":
-                System.out.println("9");
+                rellenarPedido(scanner,"Iodo");
             case "10":
-                System.out.println("10");
+                rellenarPedido(scanner,"Agua oxigenada");
             default:
                 System.out.println("Elección incorrecta , elige otra \n");
                 return option;
         }
     }
+    private static void rellenarPedido (Scanner scanner, String n){
+            int cantidad=0;
+            String nombre ="";
+            String apellido ="";
+            String direccion ="";
+
+        do {
+            System.out.println("\n\n Estamos haciendo el pedido de " + n + " :\n");
+            System.out.print("dime la cantidad: ");
+            cantidad = scanner.nextInt();
+            System.out.println("vamos a rellenar los datos personales del cliente:");
+            System.out.print("Dame tu nombre: ");
+            nombre = scanner.next();
+            System.out.print("\n Dame tu apellido: ");
+            apellido = scanner.next();
+            System.out.println("\n Dame la dirección de entrega: ");
+            System.out.print("Calle: ");
+            direccion = scanner.next();
+            System.out.println("nº: ");
+            direccion = direccion+" "+scanner.next();
+            System.out.println("Dame el piso: ");
+            direccion = direccion+" "+scanner.next();
+            System.out.println("Dame la puerta");
+            direccion = direccion+" "+scanner.next();
+            System.out.println("Dame el codigo postal");
+            direccion = direccion+" "+scanner.next();
+            pedido(n, cantidad, nombre, apellido, direccion);
+        }while(n== null && cantidad ==0 && nombre ==null && apellido ==null && direccion ==null);
+    }
+
+    private static void pedido(String n, int cantidad, String nombre, String apellido, String direccion) {
+        System.out.println("\n\n Los datos del pedido realizado son : ");
+        System.out.println("Producto: "+n+" cantidad: "+cantidad);
+        System.out.println("Nombre del cliente: "+nombre+" "+apellido);
+        System.out.println("Dirección de envío: "+direccion+" \n\n");
+
+    }
+
 }
