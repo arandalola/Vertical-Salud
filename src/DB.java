@@ -15,12 +15,13 @@ public class DB {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Setup the connection with the DB
-            connect = DriverManager.getConnection("jdbc:mysql://localhost/vertical_salud?serverTimezone=UTC"
+            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/vertical-salud?serverTimezone=UTC"
                     , "root", "");
+
 
             // Lectura DB
             stmt = connect.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM pedidos");
+            rs = (stmt.executeUpdate("INSERT INTO pedidos(name, first_name, city, product, amount) VALUES (getId, getName, )";
             if(stmt.execute("SELECT * FROM pedidos")){
                 rs = stmt.getResultSet();
                 while (rs.next()) {
@@ -36,8 +37,7 @@ public class DB {
             if(stmt.execute("SELECT * FROM productos")){
                 rs = stmt.getResultSet();
                 while (rs.next()) {
-                    System.out.println(rs.getString("id"));
-                    System.out.println(rs.getString("product_name"));
+                    System.out.println(rs.getString("id") + " " + rs.getString("product_name"));
                 }
             }
             rs = stmt.executeQuery("SELECT * FROM user");
