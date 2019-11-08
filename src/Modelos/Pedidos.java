@@ -2,17 +2,19 @@ package Modelos;
 
 public class Pedidos {
 
-    int id;
-    String name="";
-    String first_name="";
-    String city="";
-    String product="";
-    int amount;
+    private int id=0;
+    private String first_name="";
+    private String last_name="";
+    private String adress="";
+    private String city="";
+    private String product="";
+    private int amount=0;
 
-    public Pedidos(int id, String name, String first_name, String city, String product, int amount) {
+    public Pedidos(int id, String first_name, String last_name, String adress, String city, String product, int amount) {
         this.id = id;
-        this.name = name;
         this.first_name = first_name;
+        this.last_name = last_name;
+        this.adress= adress;
         this.city = city;
         this.product = product;
         this.amount = amount;
@@ -26,20 +28,28 @@ public class Pedidos {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getFirst_name() {
         return first_name;
     }
 
     public void setFirst_name(String first_name) {
         this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
     public String getCity() {
