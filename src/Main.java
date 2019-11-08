@@ -91,8 +91,7 @@ public class Main {
             address +=" "+scanner.next();
             System.out.println("Dame la ciudad: ");
             city =scanner.next();
-            address +=" "+city;
-            pedido(product,amount ,first_name,last_name , address);
+           pedido(product,amount ,first_name,last_name , address);
 
 
     }
