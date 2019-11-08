@@ -24,7 +24,6 @@ public class DB {
 
             // Lectura DB
             stmt = connect.createStatement();
-
             stmt.executeUpdate("INSERT INTO pedidos(name, first_name, city, product, amount) VALUES (getId, getName, )");
             if(stmt.execute("SELECT * FROM pedidos")){
                 rs = stmt.getResultSet();
