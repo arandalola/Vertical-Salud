@@ -11,17 +11,17 @@ public class DB {
         ResultSet rs = null;
 
         try{
-            // This will load the MySQL driver, each DB has its own driver
+
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Setup the connection with the DB
             connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/vertical-salud?serverTimezone=UTC"
                     , "root", "");
 
 
             // Lectura DB
             stmt = connect.createStatement();
-            rs = (stmt.executeUpdate("INSERT INTO pedidos(name, first_name, city, product, amount) VALUES (getId, getName, )";
+
+            rs = (stmt.executeUpdate("INSERT INTO pedidos(name, first_name, city, product, amount) VALUES (getId, getName, )"));
             if(stmt.execute("SELECT * FROM pedidos")){
                 rs = stmt.getResultSet();
                 while (rs.next()) {
