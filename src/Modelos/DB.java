@@ -1,3 +1,5 @@
+package Modelos;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -5,10 +7,12 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 
 public class DB {
-    public static void main (String[] args) throws SQLException{
-        Connection connect= null;
-        Statement stmt = null;
-        ResultSet rs = null;
+    Connection connect= null;
+    Statement stmt = null;
+    ResultSet rs = null;
+
+    public DB(){
+
 
         try{
 
@@ -21,7 +25,7 @@ public class DB {
             // Lectura DB
             stmt = connect.createStatement();
 
-            rs = (stmt.executeUpdate("INSERT INTO pedidos(name, first_name, city, product, amount) VALUES (getId, getName, )"));
+            stmt.executeUpdate("INSERT INTO pedidos(name, first_name, city, product, amount) VALUES (getId, getName, )");
             if(stmt.execute("SELECT * FROM pedidos")){
                 rs = stmt.getResultSet();
                 while (rs.next()) {
@@ -57,5 +61,6 @@ public class DB {
             e.printStackTrace();
         }
     }
+
 }
 

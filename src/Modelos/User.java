@@ -1,19 +1,17 @@
-public class Pedidos {
+package Modelos;
+
+public class User {
 
     int id;
     String name="";
     String first_name="";
     String city="";
-    String product="";
-    int amount;
 
-    public Pedidos(int id, String name, String first_name, String city, String product, int amount) {
+    public User(int id, String name, String first_name, String city) {
         this.id = id;
         this.name = name;
         this.first_name = first_name;
         this.city = city;
-        this.product = product;
-        this.amount = amount;
     }
 
     public int getId() {
@@ -46,21 +44,5 @@ public class Pedidos {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getProduct() {
-        return product;
-    }
-
-    public void setProduct(String product) {
-        this.product = product;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
 }
